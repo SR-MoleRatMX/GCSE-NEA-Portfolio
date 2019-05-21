@@ -42,9 +42,6 @@ for colour in range(len(colours)):
 #shuffles the cards
 random.shuffle(cards)
 
-name1 = str ( input ( "What is player 1's name?\n>" ) )
-name2 = str ( input ( "What is player 2's name?\n>" ) )
-
 while playagain == ("y") or playagain == ("Y"):
     #selects the top cards and then deletes them
     user1card = cards[len(cards)-1]
@@ -120,17 +117,15 @@ while playagain == ("y") or playagain == ("Y"):
         print("Player 2 has", player2cards)
 
         if len(player1cards) > len(player2cards):
-            player1cards.append( name1 )
             winninglist = player1cards
-            print("Player 1 wins the game with %i cards" %len(player1cards)-1)
-            print("Player 2 had %i less than Player 1 with %i cards" %(len(player1cards) - len(player2cards), len(player2cards-1)))
+            print("Player 1 wins the game with %i cards" %len(player1cards))
+            print("Player 2 had %i less than Player 1 with %i cards" %(len(player1cards) - len(player2cards), len(player2cards)))
             print("To see if you got a high score, just run comparison.py")
 
         else:
-            player2cards.append( name2 )
             winninglist = player2cards
             print("Player 2 wins the game with %i cards" %len(player2cards))
-            print("Player 1 had %i less than Player 2 with %i cards" %(len(player2cards)-1 - len(player1cards)-1, len(player1cards)-1))
+            print("Player 1 had %i less than Player 2 with %i cards" %(len(player2cards) - len(player1cards), len(player1cards)))
             print("To see if you got a high score, just run comparison.py")
 
     else:
