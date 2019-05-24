@@ -1,0 +1,89 @@
+import random
+
+
+#list/variables
+
+cardcolour = [ "r", "g", "y" ]
+cardnumber = []
+deck = []
+card = 0
+
+for i in range (10):
+	card += 1
+	cardnumber.append ( card )
+
+for colour in range len ( cardcolour ):
+	for number in range len ( cardnumber ):
+		card = str( cardcolour [ colour ] ) + str ( number ) 
+		deck.append ( card ) 
+
+player1list = []
+player2list = []
+
+playagain =  ( "y" )
+
+while playagain == ("y") or playagain == ( "Y" ):
+	user1card = deck[ len ( deck ) - 1 ]
+	deck.pop()
+	user2card = deck[ len ( deck ) - 1 ]
+	deck.pop()
+
+	card1colour = user1card[0]
+	card1number = user1card[1]
+	card2colour = user2card[0]
+	card2number = user2card[1]
+
+	if card1colour == card2colour:
+		if card1number > card2number:
+			print ( "Player 1 wins this round " )
+			player1list.append ( user1card )
+			player2list.append ( user2card )
+
+		else:
+			print ( "Player 2 wins this round " )
+			player2list.append ( user1card )
+			player2list.append ( user2card )
+
+	elif if card1colour == ("r") and card2colour == ("g") or card1colour == ("g") and card2colour == ("y") or card1colour == ("y") and card2colour == ("r"):
+		print ( "Player 1 wins this round " )
+		player1list.append ( user1card ) 
+		player1list.append ( user2card )
+
+	else:
+		print( "Player 2 wins this round " )
+		player2list.append ( user1card )
+		player2list.append ( user2card )
+
+	if len(deck) == 0:
+		playagain == ( "n" )
+
+		print ( "" )
+		print ( "----------" )
+		print ( "It's the end of the game " )
+		print ( "Player 1 has", player1cards )
+		print ( "Player 2 has", player2cards )	
+
+		if len(player1cards) > len(player2cards):
+			winninglist = player1cards
+			
+			print ( "Player 1 wins the game with %i cards" % len(player1cards)
+			print ( "Player 2 had %i less cards than Player 1 with just %i cards " %(len(player1cards) - len(player2cards), len(player2cards))
+			
+		else:
+			winninglist = player2cards
+
+			print ( "Player 2 won with %i cards" %len(player2cards))
+			print ( "Player 1 had %i less than Player 2 with %i cards" % (len(player2cards) - len(player1cards), len(player1cards)))
+
+	else:
+		playagain = input ( "Do you want to play again? \n>" )
+
+
+
+			
+
+
+
+
+
+
